@@ -1,0 +1,40 @@
+Not Defined:
+Pos	Id	Segment Name	Req	Max Use	Repeat	Notes	Usage
+	ISA	Interchange Control Header	M	1			Must use
+	GS	Functional Group Header	M	1			Must use
+Heading:
+Pos	Id	Segment Name	Req	Max Use	Repeat	Notes	Usage
+010	ST	Transaction Set Header	M	1			Must use
+020	B3	Beginning Segment for Carrier's Invoice	M	1			Must use
+030	B3A	Invoice Type	O	1			Used
+050	C3	Currency	O	1			Used
+LOOP ID – N1			20	N1/075L	
+075	N1	Name	O	1		N1/075L	Used
+090	N3	Address Information	O	2			Used
+100	N4	Geographic Location	O	1			Used
+Detail:
+Pos	Id	Segment Name	Req	Max Use	Repeat	Notes	Usage
+LOOP ID – LX			9999		
+010	LX	Assigned Number	M	1			Must use
+LOOP ID – N1			20	N1/075L	
+075	N1	Name	O	1		N1/075L	Used
+090	N3	Address Information	O	2			Used
+100	N4	Geographic Location	O	1			Used
+110	N9	Reference Identification	O	10			Used
+085	P1	Pick-up	O	1			Used
+090	R1	Route Information (Air)	O	1			Used
+100	POD	Proof of Delivery	O	1			Used
+LOOP ID – L5			4			
+150	L5	Description, Marks and Numbers	M	1			Must use	
+160	L0	Line Item - Quantity and Weight	O	1			Used	
+LOOP ID – L1			30				
+175	L1	Rate and Charges	O	1			Used		
+180	C3	Currency	O	1			Used		
+Summary:
+Pos	Id	Segment Name	Req	Max Use	Repeat	Notes	Usage
+015	L3	Total Weight and Charges	M	1			Must use
+045	SE	Transaction Set Trailer	M	1			Must use
+Not Defined:
+Pos	Id	Segment Name	Req	Max Use	Repeat	Notes	Usage
+	GE	Functional Group Trailer	M	1			Must use
+	IEA	Interchange Control Trailer	M	1			Must use
